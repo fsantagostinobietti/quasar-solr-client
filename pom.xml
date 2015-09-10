@@ -3,7 +3,8 @@
   <groupId>co.paralleluniverse.quasar</groupId>
   <artifactId>quasar-solr-client</artifactId>
   <version>0.1.0</version>
-  <name>Solr client for Quasar</name>
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>Solr client for Quasar</description>
   
   <dependencies>
   
@@ -28,5 +29,40 @@
    	</dependency>
    	
   </dependencies>
+  
+  <build>
+  	<plugins>
+  	
+  		<!-- package *-sources.jar -->
+	  	<plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-source-plugin</artifactId>
+	      <executions>
+	        <execution>
+	          <id>attach-sources</id>
+	          <goals>
+	            <goal>jar</goal>
+	          </goals>
+	        </execution>
+	      </executions>
+	    </plugin>
+	    
+	    <!-- package *-javadoc.jar -->
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-javadoc-plugin</artifactId>
+	      <executions>
+	        <execution>
+	          <id>attach-javadocs</id>
+	          <goals>
+	            <goal>jar</goal>
+	          </goals>
+	        </execution>
+	      </executions>
+	    </plugin>
+  	
+  	</plugins>
+  </build>
+  
   
 </project>
